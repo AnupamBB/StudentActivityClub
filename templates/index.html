@@ -1,0 +1,150 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/style_component/styles.css">
+    <title>yourClub</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="./css/all.css">
+
+
+    <!-- --------- Owl-Carousel ------------------->
+    <link rel="stylesheet" href="./css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
+
+    <!-- ------------ AOS Library ------------------------- -->
+    <link rel="stylesheet" href="./css/aos.css">
+
+    <!-- Custom Style   -->
+    <link rel="stylesheet" href="../static/styles.css">
+
+</head>
+
+<!-- ----------------------------  Navigation ---------------------------------------------- -->
+
+
+
+<body>
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo">
+                <a href="#">STUDENT's<span>club</span> </a>
+            </div>
+            <ul class="menu">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#category">CATEGORY</a></li>
+                <li><a href="#blogs">BLOGS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+                <li><a href="#legal">LEGAL</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <!-- home section -->
+    <section class="home" id="home">
+        <div class="max-width">
+            <div class="home-content">
+                <div class="text-1">Hello everyone,we are here to</div>
+                <div class="text-2">MAKE YOUR DREAM</div>
+                <div class="text-3">A MEMORY<span class="typing"></span>
+                </div>
+                <a href="#contact">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <main>
+        <!-- --------------------- Blog Carousel ----------------- -->
+
+        <h1>All Uploaded Data</h1>
+
+        <div class="form_data">
+            {% for data in uploaded_data %}
+            <div class="item">
+                <h2>Image: {{ data['filename'] }}</h2>
+                <img src="{{ url_for('static', filename='uploads/' + data['filename']) }}" alt="Uploaded Image">
+            </div>
+            {% endfor %}
+        </div>
+    
+        <a href="{{ url_for('form') }}"><button>Return to Form</button></a>
+
+
+    </main>
+
+
+    <footer class="contact" id="contact">
+
+
+        <div class="container">
+
+            <div class="about-us" data-aos="fade-right" data-aos-delay="200">
+                <h2>About us</h2>
+                <p>Welcome to the Students Club! Our club is a vibrant and inclusive community for students from all
+                    backgrounds and fields of study. Whether you're an undergraduate or a graduate student, we provide a
+                    platform for you to connect with like-minded individuals, engage in various activities, and enhance
+                    your overall university experience.</p>
+            </div>
+            <div class="newsletter" data-aos="fade-right" data-aos-delay="200">
+                <h2>Email</h2>
+                <p>Stay update with our latest</p>
+                <div class="form-element">
+                    studentsactivityclub@gmail.com
+                    anupamborboruah100@gmail.com
+                </div>
+            </div>
+            <div class="instagram" data-aos="fade-left" data-aos-delay="200">
+                <h2>Clubs Photos</h2>
+                <div class="flex-row">
+                    <img src="1.jpg" alt="insta1">
+                    <img src="5.jpg" alt="insta2">
+                    <img src="2.jpg" alt="insta3">
+                </div>
+                <div class="flex-row">
+                    <img src="3.jpg" alt="insta4">
+                    <img src="4.jpg">
+                    <img src="6.jpg" alt="insta6">
+                </div>
+            </div>
+            <div class="follow" data-aos="fade-left" data-aos-delay="200">
+                <h2>Contact us</h2>
+                <p>Let us be Social</p>
+            </div>
+        </div>
+        <div class="rights flex-row">
+            <h4 class="text-gray">
+                Copyright ©2022 studentsclub.in | All rights reserved
+        </div>
+        <div class="move-up">
+            <span><i class="fas fa-arrow-circle-up fa-2x"></i></span>
+        </div>
+    </footer>
+
+    <!---------------x------------- Main Site Section ---------------x-------------->
+
+
+
+
+    <!-- -------------x------------- Footer --------------------x------------------- -->
+
+    <!-- Jquery Library file -->
+    <script src="./js/Jquery3.4.1.min.js"></script>
+
+    <!-- --------- Owl-Carousel js ------------------->
+    <script src="./js/owl.carousel.min.js"></script>
+
+    <!-- ------------ AOS js Library  ------------------------- -->
+    <script src="./js/aos.js"></script>
+
+    <!-- Custom Javascript file -->
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
