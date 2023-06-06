@@ -115,21 +115,97 @@ html, body{
     background: transparent;
 }
 
+.main_line{
+  margin-bottom: 50px;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
 .form_data {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
+  display: flex;
+  height: 100%;
+  column-count: 3;
+  justify-content: space-around;
+  }
+  .display_block{
+    height: 100%;
+    padding-right: 27px;
+    padding-left: 27px;
+    box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.2), 0 15px 40px 0 rgba(0, 0, 0, 0.19);
+    flex-direction: column;
+    display: flex;
+    width: 20%;
+  }
+  .display_block img{
+    height: 300px;
+  }
 
-.item {
-    border: 1px solid #ccc;
-    padding: 10px;
-}
+  .display_block button{
+    padding: 6px 44px;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+    cursor: pointer;
+  }
+  .display_block button:hover{
+    background: #555555;
+    color: white;
+  }
+  .text_area{
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .display_block:nth-child(3n+1) {
+    grid-column: 1; /* Set the column for the 1st item in each group of 3 */
+  }
+  
+  .display_block:nth-child(3n+2) {
+    grid-column: 2; /* Set the column for the 2nd item in each group of 3 */
+  }
+  
+  .display_block:nth-child(3n+3) {
+    grid-column: 3; /* Set the column for the 3rd item in each group of 3 */
+  }
 
-.item img {
-    max-width: 100%;
-    height: auto;
-}
+  .form_button{
+    margin-bottom: 50px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
+  .form_button button{
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+    cursor: pointer;
+  }
+  .form_button button:hover{
+    background-color: #555555;
+    color: white;
+  }
 
 @import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
 
@@ -142,9 +218,7 @@ html, body{
   column-count: 4;
 }
 
-.blog{
-    /* height: 100vh; */
-}
+
 .blog-content{
 
   height: 300px;
@@ -360,10 +434,12 @@ p{
 
 
 
+
+
+
 /* ----------------- Footer --------------------- */
 
 .contact.contact{
-    height: 100%;
     background: var(--bg-color);
     position: relative;
 }
@@ -482,6 +558,12 @@ footer.footer .rights h4 a{
         grid-template-columns: repeat(1, 1fr);
     }
 
+    .form_data {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
 }
 
 
@@ -521,6 +603,17 @@ footer.footer .rights h4 a{
         position: absolute;
         right: 3%;
         bottom : 10%;
+    }
+
+    .form_data {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+    .item {
+        border: 1px solid #ccc;
+        padding: 10px;
+        width: 80%;
     }
 
 

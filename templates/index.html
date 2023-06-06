@@ -1,23 +1,9 @@
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../static/style_component/styles.css">
     <title>yourClub</title>
-
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="./css/all.css">
-
-
-    <!-- --------- Owl-Carousel ------------------->
-    <link rel="stylesheet" href="./css/owl.carousel.min.css">
-    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
-
-    <!-- ------------ AOS Library ------------------------- -->
-    <link rel="stylesheet" href="./css/aos.css">
-
-    <!-- Custom Style   -->
     <link rel="stylesheet" href="../static/styles.css">
 
 </head>
@@ -33,11 +19,10 @@
                 <a href="#">STUDENT's<span>club</span> </a>
             </div>
             <ul class="menu">
-                <li><a href="#home">HOME</a></li>
-                <li><a href="#category">CATEGORY</a></li>
-                <li><a href="#blogs">BLOGS</a></li>
+                <li><a href="/">HOME</a></li>
+                <li><a href="{{ url_for('blog') }}"> BLOGS</a></li>
                 <li><a href="#contact">CONTACT</a></li>
-                <li><a href="#legal">LEGAL</a></li>
+                <li><a href="#contact">LEGAL</a></li>
             </ul>
 
         </div>
@@ -61,22 +46,33 @@
 
 
     <main>
-        <!-- --------------------- Blog Carousel ----------------- -->
-
-        <h1>All Uploaded Data</h1>
-
-        <div class="form_data">
-            {% for data in uploaded_data %}
-            <div class="item">
-                <h2>Image: {{ data['filename'] }}</h2>
-                <img src="{{ url_for('static', filename='uploads/' + data['filename']) }}" alt="Uploaded Image">
-            </div>
-            {% endfor %}
+        <div class="main_line">
+            <h1>All Uploaded Data</h1>
         </div>
-    
-        <a href="{{ url_for('form') }}"><button>Return to Form</button></a>
 
+        <div class="form_box">
+            <div class="form_data">
 
+                {% for data in displayData %}
+                <div class="display_block">
+                    <td class="input_image"><img src="{{ url_for('static', filename='uploads/' + data.filename) }}"
+                            alt="Uploaded Image"></td>
+                    <br>
+                    <div class="text_area">{{ data.text }}</div>
+                    <br>
+                    <div class="desc">{{ data.explain }}</div>
+                    <br>
+                    <div class="delete_button"><a href="/delete/{{data.id}}"><button>delete</button></a></div>
+                    <br>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="form_button">
+            <h1>ADD MORE CLUBS</h1>
+            <a href="{{ url_for('form') }}"><button>Go to Form</button></a>
+        </div>
     </main>
 
 
@@ -103,19 +99,21 @@
             <div class="instagram" data-aos="fade-left" data-aos-delay="200">
                 <h2>Clubs Photos</h2>
                 <div class="flex-row">
-                    <img src="1.jpg" alt="insta1">
-                    <img src="5.jpg" alt="insta2">
-                    <img src="2.jpg" alt="insta3">
+                    <img src="../static/images/home3.jpg" alt="insta1">
+                    <img src="../static/images/home4.jpg" alt="insta2">
+                    <img src="../static/images/home9.jpg" alt="insta3">
                 </div>
                 <div class="flex-row">
-                    <img src="3.jpg" alt="insta4">
-                    <img src="4.jpg">
-                    <img src="6.jpg" alt="insta6">
+                    <img src="../static/images/home6.jpg" alt="insta4">
+                    <img src="../static/images/home7.jpg">
+                    <img src="../static/images/home8.jpg" alt="insta6">
                 </div>
             </div>
             <div class="follow" data-aos="fade-left" data-aos-delay="200">
                 <h2>Contact us</h2>
                 <p>Let us be Social</p>
+                <h6>https://www.facebook.com/anupam.borboruah.9</h6>
+                <h6>https://www.instagram.com/khalif_anup/</h6>
             </div>
         </div>
         <div class="rights flex-row">
@@ -132,19 +130,6 @@
 
 
 
-    <!-- -------------x------------- Footer --------------------x------------------- -->
-
-    <!-- Jquery Library file -->
-    <script src="./js/Jquery3.4.1.min.js"></script>
-
-    <!-- --------- Owl-Carousel js ------------------->
-    <script src="./js/owl.carousel.min.js"></script>
-
-    <!-- ------------ AOS js Library  ------------------------- -->
-    <script src="./js/aos.js"></script>
-
-    <!-- Custom Javascript file -->
-    <script src="./js/main.js"></script>
 </body>
 
 </html>

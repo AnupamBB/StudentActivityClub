@@ -1,0 +1,15 @@
+.container{
+    height: 180vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;}
+
+.blog_container{
+    padding: 5%;
+    box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.2), 0 15px 40px 0 rgba(0, 0, 0, 0.19);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
